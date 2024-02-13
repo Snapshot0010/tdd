@@ -32,3 +32,9 @@ def get_counter(name):
     if name not in COUNTERS:
         return {"Message": f"Counter {name} already exists"}, status.HTTP_404_NOT_FOUND
     return {name: COUNTERS[name]}, status.HTTP_200_OK
+
+
+@app.route('/counters/<name>', methods=['DELETE'])
+def delete_counter(name):
+    COUNTERS.pop(name)
+    return name, status.HTTP_204_NO_CONTENT

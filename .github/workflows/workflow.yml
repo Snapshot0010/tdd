@@ -24,11 +24,6 @@ jobs:
 
       - name: Test Code Coverage with nosetests
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
-
-      - name: Generate Documentation
-        uses: docker://docker.io/cytopia/sphinx-docs:3
-        with:
-          args: "make html"
         
       - name: Code Analysis with Bandit
         run: |

@@ -27,7 +27,7 @@ jobs:
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
       - name: Generate Documentation
-        uses: docker://quay.io/cytopia/sphinx-docs:3
+        uses: docker://ghcr.io/cytopia/sphinx-docs:3
         with:
           args: "make html"
         

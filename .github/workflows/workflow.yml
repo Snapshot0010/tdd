@@ -26,24 +26,10 @@ jobs:
       - name: Test Code Coverage with nosetests
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
-      - name: Set up Sphinx
-        run: |
-          mkdir -p docs
-          cat <<EOF > docs/conf.py
-          extensions = ['sphinx.ext.autodoc']
-          project = 'Your Project Name'
-          author = 'Your Name'
-          html_theme = 'alabaster'
-          html_build_dir = '_build/html'
-          master_doc = 'index'
-          EOF
-    
       - name: Generate Documentation
-        run: |
-          sphinx-quickstart -q -p docs
-          sphinx-apidoc -o docs/source src
-          make -C docs clean
-          make -C docs html
+        uses: docker://quay.io/cytopia/sphinx-docs:3
+        with:
+          args: "make html"
         
       - name: Code Analysis with Bandit
         run: |

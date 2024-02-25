@@ -27,14 +27,6 @@ jobs:
       - name: Test Code Coverage with nosetests
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
-      - name: Generate Documentation
-        run: |
-          pip install sphinx
-          sphinx-quickstart -q -p docs
-          sphinx-apidoc -o docs/source src
-          make -C docs clean
-          make -C docs html
-
       - name: Code Analysis with Bandit
         run: |
           pip install bandit

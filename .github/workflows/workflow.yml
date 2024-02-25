@@ -30,8 +30,8 @@ jobs:
         run: |
           mkdir -p docs
           echo "extensions = ['sphinx.ext.autodoc']" > docs/conf.py
-          echo "project = 'Your Project Name'" >> docs/conf.py
-          echo "author = 'Your Name'" >> docs/conf.py
+          echo "project = CI" >> docs/conf.py
+          echo "author = Camden" >> docs/conf.py
           echo "html_theme = 'alabaster'" >> docs/conf.py
     
       - name: Generate Documentation

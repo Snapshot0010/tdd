@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          sphinx-quickstart -q -p docs
+          sphinx-quickstart -p docs
           sphinx-apidoc -o docs/source src
           make -C docs clean
           make -C docs html

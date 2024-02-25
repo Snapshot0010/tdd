@@ -29,8 +29,9 @@ jobs:
       - name: Set up Sphinx
         run: |
           mkdir -p docs
-          echo "project = CI" >> docs/conf.py
-          echo "author = Camden" >> docs/conf.py
+
+          echo "project = "CI"" >> docs/conf.py
+          echo "author = "Camden"" >> docs/conf.py
           echo "html_theme = 'alabaster'" >> docs/conf.py
     
       - name: Generate Documentation
